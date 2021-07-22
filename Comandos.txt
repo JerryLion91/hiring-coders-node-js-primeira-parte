@@ -27,6 +27,8 @@ npm i pg pg-hstore
 npx sequelize migration:create --name=create-users
 npx sequelize db:migrate
 npx sequelize db:migrate:undo - apaga todas informações do banco
-npx sequelize db:migrate:undoAll - apaga todas tabelas
+npx sequelize db:migrate:undo:all - apaga todas tabelas
 
 models: acessar as infos no banco de dados e retornar rest
+* Opcional instalar extensão vscode thunder client para testes - para os comandos funcionarem é necessário estar rodando o servidor!!!
+* Para rodar o servidor: npm run dev
