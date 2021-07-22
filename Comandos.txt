@@ -34,3 +34,6 @@ models: acessar as infos no banco de dados e retornar rest
 * Para rodar o servidor: npm run dev
 
 npm i bcryptjs
+JWT: metologia para autenticar usuários no padrão RESTful - Json Web Token
+npm i jsonwebtoken
+md5: gerar hashes

@@ -16,8 +16,11 @@ class User extends Model {
             if (user.password){
                 user.password_hash = await brcypt.hash(user.password, 10);
             }
-            return this;
         })
+        return this;
+    }
+    checkPassword(password){
+        return brcypt.compare(password, this.password_hash)
     }
 }
 
