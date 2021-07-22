@@ -42,3 +42,5 @@ validação de dados
 npm i yup
 
 npm i multer
+
+npx sequelize migration:create --name=create files
