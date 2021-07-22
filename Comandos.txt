@@ -40,3 +40,5 @@ md5: gerar hashes
 
 validação de dados
 npm i yup
+
+npm i multer
