@@ -37,3 +37,6 @@ npm i bcryptjs
 JWT: metologia para autenticar usuários no padrão RESTful - Json Web Token
 npm i jsonwebtoken
 md5: gerar hashes
+
+validação de dados
+npm i yup
