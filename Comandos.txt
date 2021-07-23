@@ -44,3 +44,5 @@ npm i yup
 npm i multer
 
 npx sequelize migration:create --name=create files
+
+npm i date-fns

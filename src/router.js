@@ -11,6 +11,7 @@ import AppointmentController from "./app/controllers/AppointmentController";
 
 import authMiddleware from './app/middlewares/auth'
 import multerConfig from "./config/multer"
+import Appointment from "./app/models/Appointment";
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -18,15 +19,19 @@ const upload = multer(multerConfig);
 routes.post("/users", UserController.store);
 routes.post("/session", SessionController.store);
 
-//Lista de colaboradores
-routes.get('/collaborator', CollaboratorController.index)
 
 // Rotas autenticadas
 routes.use(authMiddleware);
 routes.put("/users", UserController.update);
 
-//Rota de agendamento
+// Lista de colaboradores
+routes.get('/collaborator', CollaboratorController.index);
+
+// Rota de agendamento
 routes.post('/appointments', AppointmentController.store);
+
+// Lista de agendamentos
+routes.get('/appointments', AppointmentController.index);
 
 // Upload de arquivos
 routes.post('/files', upload.single('file'), FileController.store)
