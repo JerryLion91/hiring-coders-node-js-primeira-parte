@@ -46,3 +46,4 @@ npm i multer
 npx sequelize migration:create --name=create files
 
 npm i date-fns
+npm add mongoose
