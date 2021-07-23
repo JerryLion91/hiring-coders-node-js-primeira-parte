@@ -8,7 +8,7 @@ import FileController from "./app/controllers/FileController";
 import CollaboratorController from "./app/controllers/CollaboratorController";
 import AppointmentController from "./app/controllers/AppointmentController";
 import ScheduleController from "./app/controllers/ScheduleController";
-
+import NotificationController from "./app/controllers/NotificationController";
 
 import authMiddleware from './app/middlewares/auth'
 import multerConfig from "./config/multer"
@@ -37,6 +37,10 @@ routes.get('/appointments', AppointmentController.index);
 // Listagem de agendamentos colaborador
 routes.get('/schedule', ScheduleController.index)
 
+// Listagem de notificações
+routes.get('/notifications', NotificationController.index)
+// Marcar como lida
+routes.put('/notifications/:id', NotificationController.update)
 // Upload de arquivos
 routes.post('/files', upload.single('file'), FileController.store)
 export default routes;
