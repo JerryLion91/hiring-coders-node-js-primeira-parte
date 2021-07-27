@@ -1,8 +1,8 @@
-import { Op } from 'sequelize'
-import { startOfDay, endOfDay, parseISO } from "date-fns";
+import { Op } from 'sequelize';
+import { startOfDay, endOfDay, parseISO } from 'date-fns';
 
-import User from "../models/User";
-import Appointment from "../models/Appointment";
+import User from '../models/User';
+import Appointment from '../models/Appointment';
 
 class ScheduleController {
   async index(req, res) {
@@ -11,7 +11,7 @@ class ScheduleController {
     });
     if (!checkUser) {
       return res.status(400).json({
-        message: "Este usuário não é um colaborador",
+        message: 'Este usuário não é um colaborador',
       });
     }
     const { date } = req.query;
@@ -24,7 +24,7 @@ class ScheduleController {
           [Op.between]: [startOfDay(parseDate), endOfDay(parseDate)],
         },
       },
-      order: ["date"],
+      order: ['date'],
     });
 
     return res.json(appointments);
