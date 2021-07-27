@@ -1,6 +1,9 @@
 import express from 'express';
 import path from 'path';
-import routes from './router';
+import routes from './routes';
+
+// this line initiate the Database
+import Database from './database/index';
 
 class App {
   constructor() {

@@ -1,5 +1,5 @@
 import User from '../models/User';
-import Notifications from '../schema/notifications';
+import Notifications from '../schema/Notifications';
 
 class NotificationController {
   async index(req, res) {

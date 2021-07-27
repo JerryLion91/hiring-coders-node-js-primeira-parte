@@ -5,7 +5,7 @@ import pt from 'date-fns/locale/pt-BR';
 import Appointment from '../models/Appointment';
 import User from '../models/User';
 import File from '../models/File';
-import Notifications from '../schema/notifications';
+import Notifications from '../schema/Notifications';
 
 class AppointmentController {
   async index(req, res) {
@@ -80,6 +80,7 @@ class AppointmentController {
       collaborator_id,
       date: startHour,
     });
+
     const user = await User.findByPk(req.userId);
     const formatDate = format(startHour, "'dia' dd 'de' MMMM', às' H:mm'h'", {
       locale: pt,

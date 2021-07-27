@@ -12,6 +12,7 @@ class Database {
   constructor() {
     this.init();
     this.mongo();
+    this.logInfo();
   }
   init() {
     this.connection = new Sequelize(databaseConfig);
@@ -23,9 +24,13 @@ class Database {
   }
   mongo() {
     this.mongoConnection = mongoose.connect(
-      'mongodb+srv://sistemadeagendamento:sistemadeagendamento@cluster0.fror3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+      'mongodb+srv://mongodb:7e8aF8ssH2PwHvK8@cluster0.gz2a4.mongodb.net/sistema?retryWrites=true&w=majority',
       { useNewUrlParser: true, useUnifiedTopology: true }
     );
   }
+  logInfo() {
+    console.log('Connected with database');
+  }
 }
+
 export default new Database();

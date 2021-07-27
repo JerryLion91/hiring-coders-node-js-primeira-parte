@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import Database from './database/index';
 import multer from 'multer';
 
 import UserController from './app/controllers/UserController';
@@ -12,7 +11,6 @@ import NotificationController from './app/controllers/NotificationController';
 
 import authMiddleware from './app/middlewares/auth';
 import multerConfig from './config/multer';
-import Appointment from './app/models/Appointment';
 
 const routes = new Router();
 const upload = multer(multerConfig);
@@ -38,8 +36,11 @@ routes.get('/schedule', ScheduleController.index);
 
 // Listagem de notificações
 routes.get('/notifications', NotificationController.index);
+
 // Marcar como lida
 routes.put('/notifications/:id', NotificationController.update);
+
 // Upload de arquivos
 routes.post('/files', upload.single('file'), FileController.store);
+
 export default routes;
