@@ -2,12 +2,12 @@
   "name": "sistema-de-agendamento",
   "version": "1.0.0",
   "description": "sistema de agenda em rest api",
+  "author": "jessica gelman",
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/server"
   },
-  "author": "jessica gelman",
-  "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "date-fns": "^2.22.1",
